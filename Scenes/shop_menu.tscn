@@ -1,0 +1,149 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvb0fe5t6idd"]
+
+[ext_resource type="Texture2D" uid="uid://dlbnfnhiqn165" path="res://TOKO.png" id="1_b5b04"]
+[ext_resource type="Script" path="res://Scripts/shop_menu.gd" id="1_hvjxx"]
+[ext_resource type="PackedScene" uid="uid://dj88dnovvfq2l" path="res://Scenes/shop_item.tscn" id="3_3n3fa"]
+[ext_resource type="Script" path="res://Scripts/coin_label.gd" id="3_yevwr"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hvjxx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.647059)
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 6.0
+offset_right = -3.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_b5b04")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 42
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 41
+
+[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 54
+split_offset = 85
+
+[node name="TopBarBG" type="ColorRect" parent="MarginContainer/VSplitContainer"]
+layout_mode = 2
+
+[node name="TabContainer" type="HBoxContainer" parent="MarginContainer/VSplitContainer/TopBarBG"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CostumeTab" type="Button" parent="MarginContainer/VSplitContainer/TopBarBG/TabContainer"]
+layout_mode = 2
+text = "Costume"
+
+[node name="MopTab" type="Button" parent="MarginContainer/VSplitContainer/TopBarBG/TabContainer"]
+layout_mode = 2
+text = "Mop"
+
+[node name="ScrewdriverTab" type="Button" parent="MarginContainer/VSplitContainer/TopBarBG/TabContainer"]
+layout_mode = 2
+text = "Screwdriver"
+
+[node name="BucketTab" type="Button" parent="MarginContainer/VSplitContainer/TopBarBG/TabContainer"]
+layout_mode = 2
+text = "Bucket"
+
+[node name="HammerTab" type="Button" parent="MarginContainer/VSplitContainer/TopBarBG/TabContainer"]
+layout_mode = 2
+text = "Hammer"
+
+[node name="LampTab" type="Button" parent="MarginContainer/VSplitContainer/TopBarBG/TabContainer"]
+layout_mode = 2
+text = "Lamp"
+
+[node name="CoinIndicatorBG" type="ColorRect" parent="MarginContainer/VSplitContainer/TopBarBG"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -9.5
+offset_right = -68.0
+offset_bottom = 37.5
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.147672, 0.147672, 0.147672, 1)
+
+[node name="CoinLabel" type="Label" parent="MarginContainer/VSplitContainer/TopBarBG/CoinIndicatorBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Coin"
+script = ExtResource("3_yevwr")
+
+[node name="BackButton" type="Button" parent="MarginContainer/VSplitContainer/TopBarBG"]
+layout_mode = 1
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back"
+
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer/VSplitContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VSplitContainer/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VSplitContainer/ColorRect2/ScrollContainer"]
+layout_mode = 2
+columns = 8
+
+[node name="ColorRect" parent="MarginContainer/VSplitContainer/ColorRect2/ScrollContainer/GridContainer" instance=ExtResource("3_3n3fa")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VSplitContainer/ColorRect2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="pressed" from="MarginContainer/VSplitContainer/TopBarBG/BackButton" to="." method="back_to_main_menu"]

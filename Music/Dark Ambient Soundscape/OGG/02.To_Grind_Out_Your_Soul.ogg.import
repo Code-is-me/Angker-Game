@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cn6xwf3c5kl5w"
+path="res://.godot/imported/02.To_Grind_Out_Your_Soul.ogg-feafcd4a2a22b669423db61109a82f66.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/Dark Ambient Soundscape/OGG/02.To_Grind_Out_Your_Soul.ogg"
+dest_files=["res://.godot/imported/02.To_Grind_Out_Your_Soul.ogg-feafcd4a2a22b669423db61109a82f66.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

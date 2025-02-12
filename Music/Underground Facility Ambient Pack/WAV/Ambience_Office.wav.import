@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bukajpamtahbp"
+path="res://.godot/imported/Ambience_Office.wav-ebe7e16202b486802a9d7bfedc7fe274.sample"
+
+[deps]
+
+source_file="res://Music/Underground Facility Ambient Pack/WAV/Ambience_Office.wav"
+dest_files=["res://.godot/imported/Ambience_Office.wav-ebe7e16202b486802a9d7bfedc7fe274.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

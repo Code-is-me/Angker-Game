@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://coxm706vm0j1i"]
+
+[ext_resource type="Script" path="res://Scripts/trash.gd" id="1_ea83o"]
+[ext_resource type="Texture2D" uid="uid://bdff3nx01y7cb" path="res://trash assets/crumpled paper 1.png" id="2_87ikc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_35t15"]
+radius = 5.0
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ormj2"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_ea83o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_87ikc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_35t15")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_ormj2")

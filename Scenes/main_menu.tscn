@@ -1,0 +1,170 @@
+[gd_scene load_steps=5 format=3 uid="uid://jafo4y77b31u"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_xyeo3"]
+[ext_resource type="Texture2D" uid="uid://gx47vpej5tva" path="res://MENU UTAMA.png" id="2_rb2ru"]
+[ext_resource type="Texture2D" uid="uid://fav68gq8ro8n" path="res://judul.png" id="3_npcup"]
+[ext_resource type="FontFile" uid="uid://yek3fu6bwv6u" path="res://Fonts/NESCyrillic.ttf" id="4_57112"]
+
+[node name="main_menu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+script = ExtResource("1_xyeo3")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="UI Skectch" type="TextureRect" parent="Node"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.415686)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_rb2ru")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -30.0
+offset_right = 23.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 19
+split_offset = 49
+dragger_visibility = 1
+
+[node name="FreindsBg" type="ColorRect" parent="Control/VSplitContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Control/VSplitContainer"]
+layout_mode = 2
+theme_override_constants/separation = 36
+split_offset = 393
+dragger_visibility = 1
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Control/VSplitContainer/HSplitContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+split_offset = 154
+dragger_visibility = 1
+
+[node name="ANGKERLabel" type="TextureRect" parent="Control/VSplitContainer/HSplitContainer/VSplitContainer"]
+layout_mode = 2
+texture = ExtResource("3_npcup")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ButtonBg" type="ColorRect" parent="Control/VSplitContainer/HSplitContainer/VSplitContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VSplitContainer/HSplitContainer/VSplitContainer/ButtonBg"]
+custom_minimum_size = Vector2(0, -0.07)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -74.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 97
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 86
+
+[node name="ButtonList" type="VBoxContainer" parent="Control/VSplitContainer/HSplitContainer/VSplitContainer/ButtonBg/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PlayButton" type="Button" parent="Control/VSplitContainer/HSplitContainer/VSplitContainer/ButtonBg/MarginContainer/ButtonList"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_57112")
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="InventoryButton" type="Button" parent="Control/VSplitContainer/HSplitContainer/VSplitContainer/ButtonBg/MarginContainer/ButtonList"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_57112")
+theme_override_font_sizes/font_size = 41
+text = "Inventory"
+
+[node name="ShopButton" type="Button" parent="Control/VSplitContainer/HSplitContainer/VSplitContainer/ButtonBg/MarginContainer/ButtonList"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_57112")
+theme_override_font_sizes/font_size = 41
+text = "Shop"
+
+[node name="Spacer" type="Control" parent="Control/VSplitContainer/HSplitContainer/VSplitContainer/ButtonBg/MarginContainer/ButtonList"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MyAccountButton" type="Button" parent="Control/VSplitContainer/HSplitContainer/VSplitContainer/ButtonBg/MarginContainer/ButtonList"]
+custom_minimum_size = Vector2(0, -100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_57112")
+theme_override_font_sizes/font_size = 41
+text = "My Account"
+
+[node name="SettingsButton" type="Button" parent="Control/VSplitContainer/HSplitContainer/VSplitContainer/ButtonBg/MarginContainer/ButtonList"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_57112")
+theme_override_font_sizes/font_size = 41
+text = "Settings"
+
+[node name="LobbyBg" type="ColorRect" parent="Control/VSplitContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VSplitContainer/HSplitContainer/LobbyBg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="buttonjoin" type="Button" parent="Control/VSplitContainer/HSplitContainer/LobbyBg/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_57112")
+theme_override_font_sizes/font_size = 31
+text = "Join"
+
+[node name="CreateLobbyButton" type="Button" parent="Control/VSplitContainer/HSplitContainer/LobbyBg/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_57112")
+theme_override_font_sizes/font_size = 31
+text = "Host"
+
+[node name="Button" type="Button" parent="Control/VSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Freinds"
+
+[connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/VSplitContainer/ButtonBg/MarginContainer/ButtonList/PlayButton" to="." method="play"]
+[connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/VSplitContainer/ButtonBg/MarginContainer/ButtonList/ShopButton" to="." method="to_shop"]
+[connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/LobbyBg/HBoxContainer/buttonjoin" to="." method="join_host"]
+[connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/LobbyBg/HBoxContainer/CreateLobbyButton" to="." method="play_as_host"]
