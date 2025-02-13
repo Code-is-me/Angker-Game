@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg8pjge0hatmu"]
+
+[ext_resource type="Script" path="res://Scenes/trash_spawner_tile.gd" id="1_ssieg"]
+[ext_resource type="Texture2D" uid="uid://daje6w2axleos" path="res://icon.svg" id="2_wt71p"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ssieg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_wt71p")
