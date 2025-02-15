@@ -241,6 +241,7 @@ properties/0/replication_mode = 1
 [node name="Ghost" type="CharacterBody2D"]
 collision_mask = 8
 script = ExtResource("1_udbyh")
+max_accel = 4500.0
 movement_speed = 199.93
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]

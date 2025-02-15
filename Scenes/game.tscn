@@ -428,9 +428,15 @@ texture = ExtResource("2_gof10")
 2:8/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_dy6fm"]
-physics_layer_0/collision_layer = 9
-physics_layer_0/collision_mask = 8
+physics_layer_0/collision_layer = 41
+physics_layer_0/collision_mask = 40
 sources/0 = SubResource("TileSetAtlasSource_h7i08")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0s2c6"]
+scenes/1/scene = ExtResource("3_vfpnq")
+
+[sub_resource type="TileSet" id="TileSet_cnt1n"]
+sources/1 = SubResource("TileSetScenesCollectionSource_0s2c6")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7tbvu"]
 texture = ExtResource("2_gof10")
@@ -859,16 +865,8 @@ texture = ExtResource("2_gof10")
 [sub_resource type="TileSet" id="TileSet_7qj6f"]
 sources/0 = SubResource("TileSetAtlasSource_kfvop")
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0s2c6"]
-scenes/1/scene = ExtResource("3_vfpnq")
-
-[sub_resource type="TileSet" id="TileSet_cnt1n"]
-sources/1 = SubResource("TileSetScenesCollectionSource_0s2c6")
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_5n53g")
-
-[node name="Trashes" type="Node2D" parent="."]
 
 [node name="Tile Maps layers" type="Node2D" parent="."]
 
@@ -880,6 +878,10 @@ tile_set = SubResource("TileSet_k31gj")
 tile_map_data = PackedByteArray("AAD3/wAAAAAGAAcAAAD3/wEAAAAGAAcAAAD3/wIAAAAGAAcAAAD3/wMAAAAGAAcAAAD3/wQAAAAGAAcAAAD3/wUAAAAGAAcAAAD3/wYAAAAGAAcAAAD3/wcAAAAEAAgAAAAGAAYAAAABAAgAAAAGAAQAAAABAAgAAAAGAAMAAAABAAgAAAAGAAIAAAABAAgAAAAGAAEAAAABAAgAAAAGAAAAAAABAAgAAAAGAP//AAABAAgAAAAGAP7/AAABAAgAAAAGAP3/AAABAAgAAAAGAPz/AAABAAgAAAAGAPv/AAABAAgAAAAGAPr/AAABAAgAAAAGAPn/AAAHAAcAAFD3//n/AAAHAAcAAAD3//r/AAAGAAcAAAD3//v/AAAGAAcAAAD3//3/AAAGAAcAAAD3//7/AAAGAAcAAAD3//z/AAAGAAcAAAD3////AAAGAAcAAAD4//n/AAAGAAcAAFD5//n/AAAGAAcAAFD6//n/AAAGAAcAAFD7//n/AAAGAAcAAFD8//n/AAAGAAcAAFD9//n/AAAGAAcAAFD+//n/AAAGAAcAAFD///n/AAAGAAcAAFAAAPn/AAAGAAcAAFABAPn/AAAGAAcAAFACAPn/AAAGAAcAAFADAPn/AAAGAAcAAFAEAPn/AAAGAAcAAFAFAPn/AAAGAAcAAFAGAAcAAAAFAAgAAAD4/wcAAAADAAgAAAD5/wcAAAADAAgAAAD6/wcAAAADAAgAAAD8/wcAAAADAAgAAAD7/wcAAAADAAgAAAD9/wcAAAADAAgAAAAFAAcAAAADAAgAAAAEAAcAAAADAAgAAAADAAcAAAADAAgAAAACAAcAAAADAAgAAAABAAcAAAADAAgAAAAAAAcAAAADAAgAAAD9/wgAAAABAAgAAAAAAAgAAAAGAAcAAAAGAAUAAAABAAgAAAA=")
 tile_set = SubResource("TileSet_dy6fm")
 
+[node name="TrashSpawners" type="TileMapLayer" parent="Tile Maps layers/Floor"]
+tile_map_data = PackedByteArray("AAADAAMAAQAAAAAAAQD6/wMAAQAAAAAAAQABAAEAAQAAAAAAAQACAP7/AQAAAAAAAQD7//3/AQAAAAAAAQAEAPz/AQAAAAAAAQA=")
+tile_set = SubResource("TileSet_cnt1n")
+
 [node name="Items on floor" type="TileMapLayer" parent="Tile Maps layers/Floor"]
 tile_map_data = PackedByteArray("AAAAAPv/AQACAAUAAAD8//7/AQAFAA8AAAD9//7/AQAGAA8AAAD5////AQANAAMAAAD5/wAAAQANAAQAAAD6////AQAOAAMAAAD7////AQAOAAMAAAD8////AQAPAAMAAAD8/wAAAQAPAAQAAAD4//z/AQAOAAIAAAD5//z/AQAPAAIAAAD4//r/AQAOAAAAAAD4//v/AQAOAAEAAAD5//r/AQAPAAAAAAD5//v/AQAPAAEAAAD6//r/AQAPAAcAAAACAPn/AQANAAsAAAACAPr/AQANAAwAAAADAPn/AQANAAsAAAADAPr/AQANAAwAAAAEAPn/AQANAAsAAAAEAPr/AQANAAwAAAAFAPn/AQANAAsAAAAFAPr/AQANAAwAAAD9//3/AQAGAA4AAAD8//3/AQAFAA4AAAA=")
 tile_set = SubResource("TileSet_deihg")
@@ -888,16 +890,8 @@ tile_set = SubResource("TileSet_deihg")
 tile_map_data = PackedByteArray("AAD6//n/AAALAAsAAAD6//r/AAALAAwAAAD7////AAAMAAsAAAD6////AAAMAAsAAAA=")
 tile_set = SubResource("TileSet_7qj6f")
 
-[node name="TrashSpawners" type="TileMapLayer" parent="Tile Maps layers"]
-tile_map_data = PackedByteArray("AAADAAMAAQAAAAAAAQD6/wMAAQAAAAAAAQABAAEAAQAAAAAAAQACAP7/AQAAAAAAAQD7//3/AQAAAAAAAQAEAPz/AQAAAAAAAQA=")
-tile_set = SubResource("TileSet_cnt1n")
-
 [node name="CanvasLayer" parent="." instance=ExtResource("4_22i13")]
 visible = false
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0.118581, 0.118581, 0.118581, 1)
 
 [node name="Area2D" parent="." instance=ExtResource("5_bdaay")]
 position = Vector2(-22, 99)
@@ -917,3 +911,5 @@ position = Vector2(-134, 89)
 [node name="TrashMpSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://Scenes/trash.tscn")
 spawn_path = NodePath("../Trashes")
+
+[node name="Trashes" type="Node2D" parent="."]

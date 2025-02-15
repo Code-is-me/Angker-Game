@@ -10,6 +10,6 @@ func _physics_process(delta: float) -> void:
 	var last_pos: Vector2 = position
 	move_local_x(speed * delta)
 	var velocity_vector: Vector2 = (position - last_pos) / delta
-	for area: Area2D in get_overlapping_areas():
-		if area is Trash:
-			area.give_velocity(velocity_vector)
+	for body: Node2D in get_overlapping_bodies():
+		if body is Trash:
+			body.give_velocity(velocity_vector)

@@ -7,4 +7,5 @@ func _ready() -> void:
 	for i in randi_range(1, 2):
 		var trash: Trash = preload("res://Scenes/trash.tscn").instantiate()
 		trash.global_position = global_position +  Vector2(randf_range(-12.0, 12.0), randf_range(-12.0, 12.0))
-		get_parent().get_node("Trashes").add_child(trash, true)
+		get_tree().current_scene.get_node("Trashes").add_child(trash, true)
+		

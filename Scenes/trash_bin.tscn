@@ -9,6 +9,7 @@ size = Vector2(10, 5)
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rp472"]
 
 [node name="Area2D" type="Area2D"]
+collision_mask = 16
 script = ExtResource("1_ql2ix")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

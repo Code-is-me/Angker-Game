@@ -11,7 +11,9 @@ properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 32
 script = ExtResource("1_ea83o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
