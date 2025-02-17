@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5q06ps8bhdoc"
-path="res://.godot/imported/dede.png-84d6be41176c2d1c28d9d5a46b3ef7fb.ctex"
+uid="uid://cvbrwdxfucams"
+path="res://.godot/imported/cato scare.jpg-fddac21ff3a424da40d88542387310e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dede.png"
-dest_files=["res://.godot/imported/dede.png-84d6be41176c2d1c28d9d5a46b3ef7fb.ctex"]
+source_file="res://cato scare.jpg"
+dest_files=["res://.godot/imported/cato scare.jpg-fddac21ff3a424da40d88542387310e9.ctex"]
 
 [params]
 

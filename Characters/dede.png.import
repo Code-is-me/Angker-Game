@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dto1bq4si4taq"
-path="res://.godot/imported/hantu.png-1ca57439d37147e9a9d37bfdfdf0d79d.ctex"
+uid="uid://5q06ps8bhdoc"
+path="res://.godot/imported/dede.png-00ef4f869c4704e73e941274d295da99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hantu.png"
-dest_files=["res://.godot/imported/hantu.png-1ca57439d37147e9a9d37bfdfdf0d79d.ctex"]
+source_file="res://Characters/dede.png"
+dest_files=["res://.godot/imported/dede.png-00ef4f869c4704e73e941274d295da99.ctex"]
 
 [params]
 

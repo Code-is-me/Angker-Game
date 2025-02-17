@@ -29,6 +29,7 @@ version_control/autoload_on_startup=true
 [file_customization]
 
 folder_colors={
+"res://Characters/": "red",
 "res://Music/": "yellow",
 "res://Scenes/": "green",
 "res://Scripts/": "purple"

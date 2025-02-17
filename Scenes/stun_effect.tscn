@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ped6u2i2ch0q"]
+
+[ext_resource type="Texture2D" uid="uid://cvbrwdxfucams" path="res://cato scare.jpg" id="1_vd8ts"]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+texture = ExtResource("1_vd8ts")
