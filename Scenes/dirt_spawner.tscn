@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbuc3mu3s6se8"]
+
+[ext_resource type="Script" path="res://Scripts/trash_spawner_tile.gd" id="1_74dll"]
+[ext_resource type="Texture2D" uid="uid://daje6w2axleos" path="res://icon.svg" id="2_ps5q0"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_74dll")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_ps5q0")

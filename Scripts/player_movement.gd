@@ -6,6 +6,7 @@ static var instance: Player
 
 func _ready():
 	instance = self
+	%StunEffect.emitting = false
 	
 func _physics_process(delta: float) -> void:
 	super._physics_process(delta)
@@ -22,9 +23,11 @@ func stun() -> void:
 		stun_time_left= 3.0
 	if current_character:
 		GameManager.instance.hud.add_child(load("res://Scenes/jumpscare.tscn").instantiate())
+		%StunEffect.emitting = true
 		
 @rpc("call_local")
 func destun()->void:
 	movement_speed=normal_movement_speed
+	%StunEffect.emitting = false
 		
 		

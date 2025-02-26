@@ -249,10 +249,8 @@ movement_speed = 160.93
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_dggx7")
-animation = &"WalkingDown"
+animation = &"IdleDown"
 autoplay = "IdleDown"
-frame = 1
-frame_progress = 0.47817
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 visible = false
@@ -266,7 +264,7 @@ texture = SubResource("GradientTexture2D_pxwt1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 enabled = false
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(3.01, 3.01)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_jsqy8")
@@ -278,4 +276,5 @@ script = ExtResource("3_wu0bo")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("CircleShape2D_wugxr")

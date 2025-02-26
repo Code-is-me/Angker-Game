@@ -11,7 +11,11 @@ func _ready():
 		set_physics_process(false)
 
 func _physics_process(_delta: float) -> void:
-	character_direction = Vector2(Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down"))
+	if Joystick.pos_vector.is_zero_approx():
+		character_direction = Vector2(Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down"))
+	else:
+		character_direction = Joystick.pos_vector
+
 	if Input.is_action_just_pressed("interact"):
 		interact.rpc()
 	if Input.is_action_just_pressed("use"):
