@@ -29,5 +29,3 @@ func stun() -> void:
 func destun()->void:
 	movement_speed=normal_movement_speed
 	%StunEffect.emitting = false
-		
-		

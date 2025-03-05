@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bstj5pudw7r8l"]
+[gd_scene load_steps=30 format=3 uid="uid://bstj5pudw7r8l"]
 
 [ext_resource type="Script" path="res://Scripts/player_movement.gd" id="1_ppk13"]
 [ext_resource type="Texture2D" uid="uid://5q06ps8bhdoc" path="res://Characters/dede.png" id="2_7lu71"]
@@ -189,16 +189,6 @@ animations = [{
 radius = 7.0
 height = 14.0
 
-[sub_resource type="Gradient" id="Gradient_5aypp"]
-offsets = PackedFloat32Array(0, 0.993976, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_pxwt1"]
-gradient = SubResource("Gradient_5aypp")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 0.5)
-
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_i4nw7"]
 properties/0/path = NodePath(".:player_id")
 properties/0/spawn = true
@@ -223,6 +213,8 @@ collision_mask = 8
 script = ExtResource("1_ppk13")
 max_accel = 4500.0
 movement_speed = 125.0
+current_character = null
+player_id = null
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
@@ -231,18 +223,12 @@ animation = &"IdleDown"
 autoplay = "IdleDown"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CapsuleShape2D_t1w4m")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(0, 9.53674e-07)
-scale = Vector2(0.835938, 0.835938)
-texture = SubResource("GradientTexture2D_pxwt1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 enabled = false
 zoom = Vector2(3.01, 3.01)
+position_smoothing_enabled = true
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_i4nw7")

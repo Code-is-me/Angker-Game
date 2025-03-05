@@ -12,7 +12,12 @@ enum AnimDir {LEFT, UP, DOWN}
 		player_id = value
 		$InputSynchronizer.set_multiplayer_authority(value)
 
-var character_direction : Vector2
+var character_direction: Vector2:
+	set(value):
+		if value.length_squared() > 0.0:
+			last_nonzero_character_direction = value
+		character_direction = value
+var last_nonzero_character_direction: Vector2
 var do_interact: bool
 var do_use: bool
 var anim_state: String = ""
@@ -49,20 +54,14 @@ func _apply_movements(delta: float) -> void:
 
 func _apply_animations():
 
-	# flip (true/false dibalik karena normalnya ke kiri bukan ke kanan)
+  # flip (true/false dibalik karena normalnya ke kiri bukan ke kanan)
 	if character_direction.x > 0: %sprite.flip_h = true
 	elif character_direction.x < 0:  %sprite.flip_h = false
  
 	if character_direction:
-		if not is_zero_approx(character_direction.x):
-			anim_dir = AnimDir.LEFT
-		elif character_direction.y > 0.0:
-			anim_dir = AnimDir.DOWN
-		else:
-			anim_dir = AnimDir.UP
-
+		var dir: float = get_direction_angle()
+		anim_dir = [AnimDir.LEFT, AnimDir.DOWN, AnimDir.LEFT, AnimDir.UP][int(snapped(dir, 90.0)/90.0)]
 		anim_state = "Walking"
-
 	else:
 		anim_state = "Idle"
   
@@ -71,17 +70,13 @@ func _apply_animations():
 		%sprite.play(anim_to_play)
 
 
-func interact_with_object():
+func interact_with_object() -> void:
 	if is_instance_valid(object_to_interact):
-		object_to_interact.interact()
-  
-func use_held_object():
+		object_to_interact.interact(self)
+
+func use_held_object() -> void:	
 	if is_instance_valid(held_pickable_object):
 		held_pickable_object.use()
-	
+  
 func get_direction_angle() -> float:
-	if anim_dir == AnimDir.LEFT:
-		return 180.0 - 180.0 * float(%sprite.flip_h)
-	elif anim_dir == AnimDir.UP:
-		return -90.0
-	return 90.0
+	return rad_to_deg(atan2(last_nonzero_character_direction.y, last_nonzero_character_direction.x))

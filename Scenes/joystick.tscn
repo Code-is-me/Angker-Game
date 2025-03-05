@@ -20,5 +20,4 @@ self_modulate = Color(1, 1, 1, 0.498039)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_facwo")
 script = ExtResource("2_wayvd")
-max_length = 110.0
-deadzone = null
+max_length = 50.0

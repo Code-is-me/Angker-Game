@@ -187,9 +187,17 @@ offset_right = 76.0
 offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "test
+text = "
 "
 horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Control/VSplitContainer/HSplitContainer/LobbyBg"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 283.0
+offset_right = 235.0
+offset_bottom = 314.0
+text = "Copy-Address"
 
 [node name="Button" type="Button" parent="Control/VSplitContainer"]
 layout_mode = 2
@@ -201,3 +209,4 @@ text = "Freinds"
 [connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/VSplitContainer/ButtonBg/MarginContainer/ButtonList/ShopButton" to="." method="to_shop"]
 [connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/LobbyBg/HBoxContainer/buttonjoin" to="." method="join_host"]
 [connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/LobbyBg/HBoxContainer/CreateLobbyButton" to="." method="play_as_host"]
+[connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/LobbyBg/Button" to="." method="copy_address"]
