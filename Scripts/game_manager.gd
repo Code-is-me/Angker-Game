@@ -1,7 +1,8 @@
 class_name GameManager
 extends Node2D
 
-enum Item {BROOM, COUNT}
+
+enum Item {BROOM, MOP, COUNT}
 # Time limit (in seconds)
 @export var time_limit: float = 150.0
 static var instance: GameManager
@@ -9,7 +10,11 @@ static var instance: GameManager
 var item_data: Dictionary = {
 	Item.BROOM: {
 		"inv_texture_path": "res://icon.svg"
-  }
+	},
+	Item.MOP: {
+		"inv_texture_path": "res://icon.svg",
+		"inv_texture_color": Color.YELLOW
+	}
 }
 # How much time left 
 var time_left: float:
@@ -62,6 +67,8 @@ func remove_item_from_inventory(item: Item) -> void:
 
 func update_inventory_hud() -> void:
 	var slot_textures: Array[Texture2D] = []
+	var colors: PackedColorArray = []
 	for item: Item in inventory:
 		slot_textures.append(load(item_data[item].inv_texture_path))
-	hud.display_items_in_inventory(slot_textures)
+		colors.append(item_data[item].get("inv_texture_color", Color.WHITE))
+	hud.display_items_in_inventory(slot_textures, colors)

@@ -4,14 +4,16 @@
 [ext_resource type="Script" path="res://Scripts/mop.gd" id="1_rjgbg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgs04"]
-size = Vector2(129, 128)
+size = Vector2(12, 12)
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_rjgbg")
+item_type = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.09, 0.09)
 texture = ExtResource("1_eg3ib")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
+modulate = Color(1, 1, 0.364706, 1)
 shape = SubResource("RectangleShape2D_kgs04")

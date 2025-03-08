@@ -1,12 +1,14 @@
-[gd_scene load_steps=18 format=4 uid="uid://csv46bfsvllmk"]
+[gd_scene load_steps=20 format=4 uid="uid://csv46bfsvllmk"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_5n53g"]
 [ext_resource type="Texture2D" uid="uid://cqymhkin4ebs2" path="res://Package Creepy/Tileset_Large.png" id="2_gof10"]
 [ext_resource type="PackedScene" uid="uid://cg8pjge0hatmu" path="res://Scenes/trash_spawner_tile.tscn" id="3_vfpnq"]
 [ext_resource type="PackedScene" uid="uid://bd3h5h8kwh818" path="res://Scenes/HUD.tscn" id="4_22i13"]
+[ext_resource type="PackedScene" uid="uid://bbuc3mu3s6se8" path="res://Scenes/dirt_spawner.tscn" id="4_ygnik"]
 [ext_resource type="PackedScene" uid="uid://cmakdhwielgy0" path="res://Scenes/broom.tscn" id="5_bdaay"]
 [ext_resource type="PackedScene" uid="uid://coxm706vm0j1i" path="res://Scenes/trash.tscn" id="6_4u1es"]
 [ext_resource type="PackedScene" uid="uid://c6v3x477h4qhf" path="res://Scenes/trash_bin.tscn" id="6_eq2qp"]
+[ext_resource type="PackedScene" uid="uid://csvfex00stir" path="res://Scenes/mop.tscn" id="9_wfig1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbnfq"]
 texture = ExtResource("2_gof10")
@@ -442,6 +444,7 @@ sources/0 = SubResource("TileSetAtlasSource_h7i08")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0s2c6"]
 scenes/1/scene = ExtResource("3_vfpnq")
+scenes/2/scene = ExtResource("4_ygnik")
 
 [sub_resource type="TileSet" id="TileSet_cnt1n"]
 sources/1 = SubResource("TileSetScenesCollectionSource_0s2c6")
@@ -890,6 +893,10 @@ tile_set = SubResource("TileSet_dy6fm")
 tile_map_data = PackedByteArray("AAADAAMAAQAAAAAAAQD6/wMAAQAAAAAAAQABAAEAAQAAAAAAAQACAP7/AQAAAAAAAQD7//3/AQAAAAAAAQAEAPz/AQAAAAAAAQA=")
 tile_set = SubResource("TileSet_cnt1n")
 
+[node name="DirtSpawners" type="TileMapLayer" parent="Tile Maps layers/Floor"]
+tile_map_data = PackedByteArray("AAADAAMAAQAAAAAAAQD6/wMAAQAAAAAAAQABAAEAAQAAAAAAAQACAP7/AQAAAAAAAQD7//3/AQAAAAAAAQAEAPz/AQAAAAAAAQD5/wEAAQAAAAAAAgD8/wEAAQAAAAAAAgD///3/AQAAAAAAAgACAP3/AQAAAAAAAgA=")
+tile_set = SubResource("TileSet_cnt1n")
+
 [node name="Items on floor" type="TileMapLayer" parent="Tile Maps layers/Floor"]
 tile_map_data = PackedByteArray("AAAAAPv/AQACAAUAAAD8//7/AQAFAA8AAAD9//7/AQAGAA8AAAD5////AQANAAMAAAD5/wAAAQANAAQAAAD6////AQAOAAMAAAD7////AQAOAAMAAAD8////AQAPAAMAAAD8/wAAAQAPAAQAAAD4//z/AQAOAAIAAAD5//z/AQAPAAIAAAD4//r/AQAOAAAAAAD4//v/AQAOAAEAAAD5//r/AQAPAAAAAAD5//v/AQAPAAEAAAD6//r/AQAPAAcAAAACAPn/AQANAAsAAAACAPr/AQANAAwAAAADAPn/AQANAAsAAAADAPr/AQANAAwAAAAEAPn/AQANAAsAAAAEAPr/AQANAAwAAAAFAPn/AQANAAsAAAAFAPr/AQANAAwAAAD9//3/AQAGAA4AAAD8//3/AQAFAA4AAAA=")
 tile_set = SubResource("TileSet_deihg")
@@ -920,3 +927,8 @@ _spawnable_scenes = PackedStringArray("res://Scenes/trash.tscn")
 spawn_path = NodePath("../Trashes")
 
 [node name="Trashes" type="Node2D" parent="."]
+
+[node name="Dirts" type="Node2D" parent="."]
+
+[node name="Area2D4" parent="." instance=ExtResource("9_wfig1")]
+position = Vector2(27, 51)

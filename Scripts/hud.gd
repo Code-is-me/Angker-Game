@@ -24,8 +24,11 @@ func display_time(time: float) -> void:
 func get_slot_node(idx: int) -> Control:
 	return %InventoryContainer.get_child(inventory_slot_count - idx - 1)
 
-func display_items_in_inventory(items: Array[Texture2D]) -> void:
+func display_items_in_inventory(items:Array[Texture2D],item_colors:PackedColorArray)->void:
 	for i in inventory_slot_count:
 		var slot_node: Control = get_slot_node(i)
 		var slot_texturerect: TextureRect = slot_node.get_node(^"TextureRect")
-		slot_texturerect.texture = null if i >= items.size() else items[i]
+		var slot_empty: bool = i >= items.size()
+		slot_texturerect.texture = null if slot_empty else items[i]
+		if !slot_empty:
+			slot_texturerect.modulate = item_colors[i]
