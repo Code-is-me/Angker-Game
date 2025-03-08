@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvb0fe5t6idd"]
 
 [ext_resource type="Texture2D" uid="uid://dlbnfnhiqn165" path="res://TOKO.png" id="1_b5b04"]
-[ext_resource type="Script" path="res://Scripts/shop_menu.gd" id="1_hvjxx"]
+[ext_resource type="Script" uid="uid://hgoo6baghuuf" path="res://Scripts/shop_menu.gd" id="1_hvjxx"]
 [ext_resource type="PackedScene" uid="uid://dj88dnovvfq2l" path="res://Scenes/shop_item.tscn" id="3_3n3fa"]
-[ext_resource type="Script" path="res://Scripts/coin_label.gd" id="3_yevwr"]
+[ext_resource type="Script" uid="uid://qri1dnpk07gu" path="res://Scripts/coin_label.gd" id="3_yevwr"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmakdhwielgy0"]
 
-[ext_resource type="Script" path="res://Scripts/broom.gd" id="1_jkink"]
+[ext_resource type="Script" uid="uid://bt6nhx7k8re68" path="res://Scripts/broom.gd" id="1_jkink"]
 [ext_resource type="Texture2D" uid="uid://daje6w2axleos" path="res://icon.svg" id="2_tgtvs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xqob"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=4 uid="uid://csv46bfsvllmk"]
 
-[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_5n53g"]
+[ext_resource type="Script" uid="uid://cfm0bxugvhrb5" path="res://Scripts/game_manager.gd" id="1_5n53g"]
 [ext_resource type="Texture2D" uid="uid://cqymhkin4ebs2" path="res://Package Creepy/Tileset_Large.png" id="2_gof10"]
 [ext_resource type="PackedScene" uid="uid://cg8pjge0hatmu" path="res://Scenes/trash_spawner_tile.tscn" id="3_vfpnq"]
 [ext_resource type="PackedScene" uid="uid://bd3h5h8kwh818" path="res://Scenes/HUD.tscn" id="4_22i13"]

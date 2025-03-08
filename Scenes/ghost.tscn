@@ -1,8 +1,8 @@
 [gd_scene load_steps=33 format=3 uid="uid://bigrwsjf5u4du"]
 
-[ext_resource type="Script" path="res://Scripts/ghost.gd" id="1_wslp3"]
+[ext_resource type="Script" uid="uid://bp12jtxk1qcq7" path="res://Scripts/ghost.gd" id="1_wslp3"]
 [ext_resource type="Texture2D" uid="uid://dto1bq4si4taq" path="res://Characters/hantu.png" id="2_55jdr"]
-[ext_resource type="Script" path="res://Scripts/input_synchronizer.gd" id="3_wu0bo"]
+[ext_resource type="Script" uid="uid://c1y4ylttbia7s" path="res://Scripts/input_synchronizer.gd" id="3_wu0bo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5wo35"]
 atlas = ExtResource("2_55jdr")

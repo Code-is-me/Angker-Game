@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c6v3x477h4qhf"]
 
 [ext_resource type="Texture2D" uid="uid://b5qjd07mwulyn" path="res://trash assets/recycling 1.png" id="1_2hbde"]
-[ext_resource type="Script" path="res://Scripts/trash_bin.gd" id="1_ql2ix"]
+[ext_resource type="Script" uid="uid://ds3tkjk8hqfye" path="res://Scripts/trash_bin.gd" id="1_ql2ix"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8m0co"]
 size = Vector2(10, 5)

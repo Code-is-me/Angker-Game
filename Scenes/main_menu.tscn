@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://jafo4y77b31u"]
 
-[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_xyeo3"]
+[ext_resource type="Script" uid="uid://dnp5ybeikg1yl" path="res://Scripts/main_menu.gd" id="1_xyeo3"]
 [ext_resource type="Texture2D" uid="uid://gx47vpej5tva" path="res://MENU UTAMA.png" id="2_rb2ru"]
 [ext_resource type="Texture2D" uid="uid://fav68gq8ro8n" path="res://judul.png" id="3_npcup"]
 [ext_resource type="FontFile" uid="uid://yek3fu6bwv6u" path="res://Fonts/NESCyrillic.ttf" id="4_57112"]

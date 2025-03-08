@@ -21,7 +21,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6vn00"]
 _data = {
-"jumpscare": SubResource("Animation_43sn5")
+&"jumpscare": SubResource("Animation_43sn5")
 }
 
 [node name="Control" type="Control"]
