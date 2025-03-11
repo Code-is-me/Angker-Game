@@ -14,9 +14,8 @@ func _ready() -> void:
 
 func _on_i_body_entered(body: Node2D) -> void:
 	if body is GameCharacter:
-		body.object_to_interact = self
+		body.add_interactible_object_to_list(self)
 
 func _on_i_body_exited(body: Node2D) -> void:
 	if body is GameCharacter:
-		if body.object_to_interact == self:
-			body.object_to_interact = null
+		body.remove_interactible_object_from_list(self)

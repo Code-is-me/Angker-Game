@@ -23,7 +23,8 @@ var do_use: bool
 var anim_state: String = ""
 var anim_dir: AnimDir = AnimDir.DOWN
 
-var object_to_interact: InteractibleObject
+var object_to_interact_list: Array[InteractibleObject]
+var object_to_interact_rem_list: Array[InteractibleObject]
 var held_pickable_object: PickableInteractibleObject
 
 
@@ -71,12 +72,27 @@ func _apply_animations():
 
 
 func interact_with_object() -> void:
-	if is_instance_valid(object_to_interact):
-		object_to_interact.interact(self)
+	print(object_to_interact_list)
+	if !object_to_interact_list.is_empty():
+		object_to_interact_list[0].interact(self)
 
-func use_held_object() -> void:	
+func use_held_object() -> void:
 	if is_instance_valid(held_pickable_object):
 		held_pickable_object.use()
   
 func get_direction_angle() -> float:
 	return rad_to_deg(atan2(last_nonzero_character_direction.y, last_nonzero_character_direction.x))
+
+func add_interactible_object_to_list(interactible_object: InteractibleObject) -> void:
+	var obj_in_rem_idx: int = object_to_interact_rem_list.find(interactible_object)
+	if obj_in_rem_idx==-1:
+		object_to_interact_list.append(interactible_object)
+	else:
+		object_to_interact_rem_list.remove_at(obj_in_rem_idx)
+
+func remove_interactible_object_from_list(interactible_object: InteractibleObject) -> void:
+	var obj_idx: int = object_to_interact_list.find(interactible_object)
+	if obj_idx != -1:
+		object_to_interact_list.remove_at(obj_idx)
+	else:
+		object_to_interact_rem_list.append(interactible_object)

@@ -211,10 +211,7 @@ properties/0/replication_mode = 1
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 8
 script = ExtResource("1_ppk13")
-max_accel = 4500.0
 movement_speed = 125.0
-current_character = null
-player_id = null
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

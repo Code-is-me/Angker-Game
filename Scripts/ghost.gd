@@ -21,7 +21,7 @@ func check_for_player(body: Node2D) -> void:
 		
 func interact_with_object() -> void:
 	super.interact_with_object()
-	if multiplayer.is_server() and not is_instance_valid(object_to_interact):
+	if multiplayer.is_server() and not object_to_interact_list.is_empty():
 		for body: Node2D in $Area2D.get_overlapping_bodies():
 			if body is Player:
 				body.stun.rpc()

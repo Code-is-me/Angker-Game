@@ -3,14 +3,18 @@
 [ext_resource type="Script" uid="uid://bx803ac1cusgq" path="res://Scripts/dirt.gd" id="1_kaetr"]
 [ext_resource type="Texture2D" uid="uid://10ubpv80fqxv" path="res://trash assets/rotting food.png" id="1_soaj1"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dclkr"]
-radius = 8.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_wpffy"]
+radius = 5.0
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_kaetr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5625, 0.5625)
 texture = ExtResource("1_soaj1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_dclkr")
+position = Vector2(0, 1)
+rotation = 1.5708
+scale = Vector2(0.88, 0.88)
+shape = SubResource("CircleShape2D_wpffy")

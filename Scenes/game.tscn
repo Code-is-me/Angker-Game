@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://csv46bfsvllmk"]
+[gd_scene load_steps=21 format=4 uid="uid://csv46bfsvllmk"]
 
 [ext_resource type="Script" uid="uid://cfm0bxugvhrb5" path="res://Scripts/game_manager.gd" id="1_5n53g"]
 [ext_resource type="Texture2D" uid="uid://cqymhkin4ebs2" path="res://Package Creepy/Tileset_Large.png" id="2_gof10"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://coxm706vm0j1i" path="res://Scenes/trash.tscn" id="6_4u1es"]
 [ext_resource type="PackedScene" uid="uid://c6v3x477h4qhf" path="res://Scenes/trash_bin.tscn" id="6_eq2qp"]
 [ext_resource type="PackedScene" uid="uid://csvfex00stir" path="res://Scenes/mop.tscn" id="9_wfig1"]
+[ext_resource type="PackedScene" uid="uid://ceyirkvq6r4g0" path="res://Scenes/bucket.tscn" id="10_ldgsr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbnfq"]
 texture = ExtResource("2_gof10")
@@ -745,7 +746,6 @@ texture = ExtResource("2_gof10")
 12:5/0 = 0
 13:5/0 = 0
 14:5/0 = 0
-15:5/0 = 0
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -760,7 +760,6 @@ texture = ExtResource("2_gof10")
 12:6/0 = 0
 13:6/0 = 0
 14:6/0 = 0
-15:6/0 = 0
 0:7/0 = 0
 2:7/0 = 0
 3:7/0 = 0
@@ -824,16 +823,12 @@ texture = ExtResource("2_gof10")
 7:11/0 = 0
 8:11/0 = 0
 9:11/0 = 0
-11:11/0 = 0
-12:11/0 = 0
-12:11/0/texture_origin = Vector2i(0, 4)
 13:11/0 = 0
 15:11/0 = 0
 0:12/0 = 0
 1:12/0 = 0
 2:12/0 = 0
 3:12/0 = 0
-11:12/0 = 0
 13:12/0 = 0
 15:12/0 = 0
 0:13/0 = 0
@@ -872,6 +867,9 @@ texture = ExtResource("2_gof10")
 10:15/0 = 0
 11:15/0 = 0
 12:15/0 = 0
+12:11/0 = 0
+15:5/0 = 0
+15:6/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_7qj6f"]
 sources/0 = SubResource("TileSetAtlasSource_kfvop")
@@ -901,8 +899,8 @@ tile_set = SubResource("TileSet_cnt1n")
 tile_map_data = PackedByteArray("AAAAAPv/AQACAAUAAAD8//7/AQAFAA8AAAD9//7/AQAGAA8AAAD5////AQANAAMAAAD5/wAAAQANAAQAAAD6////AQAOAAMAAAD7////AQAOAAMAAAD8////AQAPAAMAAAD8/wAAAQAPAAQAAAD4//z/AQAOAAIAAAD5//z/AQAPAAIAAAD4//r/AQAOAAAAAAD4//v/AQAOAAEAAAD5//r/AQAPAAAAAAD5//v/AQAPAAEAAAD6//r/AQAPAAcAAAACAPn/AQANAAsAAAACAPr/AQANAAwAAAADAPn/AQANAAsAAAADAPr/AQANAAwAAAAEAPn/AQANAAsAAAAEAPr/AQANAAwAAAAFAPn/AQANAAsAAAAFAPr/AQANAAwAAAD9//3/AQAGAA4AAAD8//3/AQAFAA4AAAA=")
 tile_set = SubResource("TileSet_deihg")
 
-[node name="Objects" type="TileMapLayer" parent="Tile Maps layers/Floor/Items on floor"]
-tile_map_data = PackedByteArray("AAD6//n/AAALAAsAAAD6//r/AAALAAwAAAD7////AAAMAAsAAAD6////AAAMAAsAAAA=")
+[node name="Objects" type="TileMapLayer" parent="Tile Maps layers/Floor"]
+tile_map_data = PackedByteArray("AAD6//n/AAALAAsAAAD6//r/AAALAAwAAAD6////AAALAAsAAAD7////AAALAAsAAAD+////AAAPAAUAAAABAP//AAAPAAUAAAABAAAAAAAPAAYAAAD+/wAAAAAPAAYAAAA=")
 tile_set = SubResource("TileSet_7qj6f")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("4_22i13")]
@@ -914,7 +912,7 @@ position = Vector2(-22, 99)
 position = Vector2(-43, 84)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://Scenes/player.tscn", "res://Scenes/ghost.tscn")
+_spawnable_scenes = PackedStringArray("uid://bstj5pudw7r8l", "uid://bigrwsjf5u4du")
 spawn_path = NodePath("../Players")
 
 [node name="Players" type="Node2D" parent="."]
@@ -923,8 +921,12 @@ spawn_path = NodePath("../Players")
 position = Vector2(-134, 89)
 
 [node name="TrashMpSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://Scenes/trash.tscn")
+_spawnable_scenes = PackedStringArray("uid://coxm706vm0j1i")
 spawn_path = NodePath("../Trashes")
+
+[node name="DirtMpSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://c1nn6dyi1xqph")
+spawn_path = NodePath("../Dirts")
 
 [node name="Trashes" type="Node2D" parent="."]
 
@@ -932,3 +934,6 @@ spawn_path = NodePath("../Trashes")
 
 [node name="Area2D4" parent="." instance=ExtResource("9_wfig1")]
 position = Vector2(27, 51)
+
+[node name="Bucket" parent="." instance=ExtResource("10_ldgsr")]
+position = Vector2(-104, 80)
