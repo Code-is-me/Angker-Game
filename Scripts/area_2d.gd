@@ -68,7 +68,11 @@ func check_for_use(item: GameManager.Item) -> void:
 func call_use() -> void:
 	use()
 
-@rpc("call_local")
+@rpc("call_local", "reliable")
 func _s_pckngup_gc(np: String) -> void:
-	set_physics_process(!np.is_empty())
+	var should_physics_process_enabled: bool = !np.is_empty()
+	if !should_physics_process_enabled:
+		set_physics_process(false)
 	_picking_up_gc = null if np.is_empty() else get_node(np)
+	if should_physics_process_enabled:
+		set_physics_process(true)

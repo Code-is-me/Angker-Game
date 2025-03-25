@@ -13,6 +13,7 @@ const DISTANCE_TO_WTRBTM = 15.0
 
 
 func _ready() -> void:
+	super._ready()
 	update_according_to_faucet_on_status(watertap_on)
 	if !multiplayer.is_server():
 		$Area2D.queue_free()
