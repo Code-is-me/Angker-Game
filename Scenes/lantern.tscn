@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3xcdu6ta5bbw"]
+
+[ext_resource type="Script" uid="uid://b2no741a2h7gk" path="res://Scripts/area_2d.gd" id="1_q5ajm"]
+[ext_resource type="Texture2D" uid="uid://chsh5e4gehdrf" path="res://lantern_light.png" id="2_g4uhy"]
+[ext_resource type="Texture2D" uid="uid://c8pqg14xnqwvn" path="res://Angker 2D Sprites/lantern.png" id="2_rm8es"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e5q6r"]
+radius = 5.0
+height = 18.0
+
+[node name="PickableInteractibleObject" type="Area2D"]
+script = ExtResource("1_q5ajm")
+display_item_in_inventory = false
+metadata/_custom_type_script = "uid://b2no741a2h7gk"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0.854521, 0.755239, 1)
+energy = 0.53
+range_z_min = -609
+range_z_max = 869
+texture = ExtResource("2_g4uhy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rm8es")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_e5q6r")

@@ -2,39 +2,51 @@ class_name PickableInteractibleObject
 extends InteractibleObject
 
 
+@export var display_item_in_inventory: bool = true
 @export var pickable_by_player: bool = true
 @export var pickable_by_ghost: bool = false
 @export var item_type: GameManager.Item
 
+
+var _picking_up_gc: GameCharacter
 var picking_up_gc: GameCharacter = null:
 	set(value):
-		set_physics_process(is_instance_valid(value))
-		picking_up_gc = value
+		if multiplayer.is_server():
+			var object_exists: bool = is_instance_valid(value)
+			_s_pckngup_gc.rpc(get_path_to(value) if object_exists else "")
+		else:
+			printerr("Cannot set 'picking_up_gc' from a non server side. Multiplayer unique id: ", multiplayer.get_unique_id())
+	get:
+		return _picking_up_gc
 
-func _ready():
+func _ready() -> void:
 	super._ready()
-	picking_up_gc = null
+	set_physics_process(false)
 
 func _physics_process(_delta: float) -> void:
-	global_position = picking_up_gc.global_position
+	global_position = _picking_up_gc.global_position
 
 func _on_interact_with_gc(gc: GameCharacter) -> void:
 	if (gc is Player and !pickable_by_player) or (gc is Ghost and !pickable_by_ghost):
 		return
 	var held: bool = gc.held_pickable_object == self
 	if not held:
+		if is_instance_valid(gc.held_pickable_object):
+			gc.held_pickable_object.interact(gc)
 		picking_up_gc = gc
 		gc. held_pickable_object = self
-		add_to_inventory.rpc_id(gc.player_id)
+		if display_item_in_inventory:
+			add_to_inventory.rpc_id(gc.player_id)
 	else:
 		picking_up_gc = null
 		gc. held_pickable_object = null
-		remove_from_inventory.rpc_id(gc.player_id)
+		if display_item_in_inventory:
+			remove_from_inventory.rpc_id(gc.player_id)
 
-func use():
+func use() -> void:
 	_on_used()
 
-func _on_used():
+func _on_used() -> void:
 	pass
 
 @rpc("call_local")
@@ -52,7 +64,11 @@ func check_for_use(item: GameManager.Item) -> void:
 	if item == item_type:
 		call_use.rpc_id(1)
 
-
 @rpc("any_peer", "call_local")
 func call_use() -> void:
-	use() 
+	use()
+
+@rpc("call_local")
+func _s_pckngup_gc(np: String) -> void:
+	set_physics_process(!np.is_empty())
+	_picking_up_gc = null if np.is_empty() else get_node(np)

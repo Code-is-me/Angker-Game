@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctmpa7kxu5cyq"]
+
+[ext_resource type="Script" uid="uid://c8714rwk5qjpy" path="res://Scripts/watertap.gd" id="1_k8hd3"]
+[ext_resource type="Texture2D" uid="uid://bldj3ko2t4vgj" path="res://Angker 2D Sprites/water_tap.png" id="1_ulmq4"]
+[ext_resource type="Texture2D" uid="uid://cnkrtk4vunfbt" path="res://Angker 2D Sprites/Water.png" id="2_m0d5s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8hd3"]
+size = Vector2(4, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0d5s"]
+size = Vector2(16, 16)
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 9
+collision_mask = 9
+script = ExtResource("1_k8hd3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="WaterCollision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, 16)
+shape = SubResource("RectangleShape2D_k8hd3")
+
+[node name="Tap" type="Sprite2D" parent="."]
+texture = ExtResource("1_ulmq4")
+
+[node name="TapCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_m0d5s")
+
+[node name="Water" type="Sprite2D" parent="."]
+position = Vector2(4, 16)
+texture = ExtResource("2_m0d5s")
