@@ -15,7 +15,7 @@ const DISTANCE_TO_WTRBTM = 15.0
 func _ready() -> void:
 	update_according_to_faucet_on_status(watertap_on)
 	if !multiplayer.is_server():
-	   $Area2D.queue_free()
+		$Area2D.queue_free()
 
 func _physics_process(delta: float):
 	var highest_bucket: Bucket = null
