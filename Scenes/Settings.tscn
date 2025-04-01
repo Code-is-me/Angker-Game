@@ -1,0 +1,101 @@
+[gd_scene load_steps=2 format=3 uid="uid://dplxh4chvib3x"]
+
+[ext_resource type="Script" uid="uid://c6b78qxi7k3y4" path="res://Scripts/settings.gd" id="1_4hxq3"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_4hxq3")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.231373, 0.231373, 0.231373, 0.360784)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -416.0
+offset_top = -256.0
+offset_right = 416.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="ColorRect/MarginContainer/Control"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+text = "X"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -160.0
+offset_right = 256.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Music" type="Button" parent="ColorRect/MarginContainer/Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "MUSIC"
+
+[node name="SoundEffect" type="Button" parent="ColorRect/MarginContainer/Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "SOUND EFFECTS"
+
+[node name="Logout" type="Button" parent="ColorRect/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "LOGOUT"
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.000784452, 0.000648817, 0.00076203, 1)
+theme_override_font_sizes/font_size = 71
+text = "Settings"
+
+[connection signal="pressed" from="ColorRect/MarginContainer/Control/BackButton" to="." method="close"]
+[connection signal="toggled" from="ColorRect/MarginContainer/Control/VBoxContainer/Music" to="." method="_on_music_toggled"]
+[connection signal="toggled" from="ColorRect/MarginContainer/Control/VBoxContainer/SoundEffect" to="." method="_on_sound_effect_toggled"]

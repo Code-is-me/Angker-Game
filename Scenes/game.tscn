@@ -945,7 +945,7 @@ position = Vector2(-38, 73)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.92549)
 
 [node name="Area2D5" parent="." instance=ExtResource("12_rku1e")]
 position = Vector2(168, 56)

@@ -207,6 +207,7 @@ text = "Freinds"
 
 [connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/VSplitContainer/ButtonBg/MarginContainer/ButtonList/PlayButton" to="." method="play"]
 [connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/VSplitContainer/ButtonBg/MarginContainer/ButtonList/ShopButton" to="." method="to_shop"]
+[connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/VSplitContainer/ButtonBg/MarginContainer/ButtonList/SettingsButton" to="." method="open_settings"]
 [connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/LobbyBg/HBoxContainer/buttonjoin" to="." method="join_host"]
 [connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/LobbyBg/HBoxContainer/CreateLobbyButton" to="." method="play_as_host"]
 [connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/LobbyBg/Button" to="." method="copy_address"]

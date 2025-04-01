@@ -1,7 +1,11 @@
-[gd_scene format=3 uid="uid://dgh5p4n68mo7t"]
+[gd_scene load_steps=2 format=3 uid="uid://dgh5p4n68mo7t"]
+
+[ext_resource type="AudioStream" uid="uid://bobvoledtd872" path="res://dark-ambient-music-312290.mp3" id="1_mdvy1"]
 
 [node name="Node" type="Node"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_mdvy1")
 volume_db = -16.0
 autoplay = true
+bus = &"Music"

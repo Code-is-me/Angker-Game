@@ -12,6 +12,10 @@ func _ready() -> void:
 func to_shop() -> void:
 	get_tree().change_scene_to_file("res://Scenes/shop_menu.tscn")
 
+func open_settings() -> void:
+	var settings_instance: Node = load("res://Scenes/settings.tscn").instantiate()
+	add_child(settings_instance)
+
 func play_as_host():
 	MultiplayerManager.become_host(%Label)
 	%Label.visible = true
