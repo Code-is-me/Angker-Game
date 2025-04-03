@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbh3apq7ual7e"]
+
+[ext_resource type="Script" uid="uid://csrlvnx3qhbep" path="res://Scenes/pickable_interactible_object.gd" id="1_iqipf"]
+[ext_resource type="Texture2D" uid="uid://83ed68rtixbl" path="res://trap.png" id="2_44njn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sjed6"]
+radius = 10.0499
+
+[node name="PickableInteractibleObject" type="Area2D"]
+script = ExtResource("1_iqipf")
+pickable_by_player = false
+pickable_by_ghost = true
+metadata/_custom_type_script = "uid://b2no741a2h7gk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sjed6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_44njn")

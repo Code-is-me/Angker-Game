@@ -18,10 +18,14 @@ var picking_up_gc: GameCharacter = null:
 			printerr("Cannot set 'picking_up_gc' from a non server side. Multiplayer unique id: ", multiplayer.get_unique_id())
 	get:
 		return _picking_up_gc
+signal item_picked_up(gc: GameCharacter)
+signal item_dropped(gc: GameCharacter)
 
 func _ready() -> void:
 	super._ready()
 	set_physics_process(false)
+	item_picked_up.connect(func(gc: GameCharacter): print(self, " picked up by ", gc.name, " on ", multiplayer.get_unique_id()))
+	item_dropped.connect(func(gc: GameCharacter): print(self, " dropped by ", gc.name, " on ", multiplayer.get_unique_id()))
 
 func _physics_process(_delta: float) -> void:
 	global_position = _picking_up_gc.global_position
@@ -73,6 +77,8 @@ func _s_pckngup_gc(np: String) -> void:
 	var should_physics_process_enabled: bool = !np.is_empty()
 	if !should_physics_process_enabled:
 		set_physics_process(false)
+		item_dropped.emit(_picking_up_gc)
 	_picking_up_gc = null if np.is_empty() else get_node(np)
 	if should_physics_process_enabled:
 		set_physics_process(true)
+		item_picked_up.emit(_picking_up_gc)

@@ -29,3 +29,7 @@ func stun() -> void:
 func destun()->void:
 	movement_speed=normal_movement_speed
 	%StunEffect.emitting = false
+	
+@rpc("call_local", "reliable")
+func trap() -> void:
+	movement_speed = 0.0

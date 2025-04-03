@@ -239,10 +239,8 @@ movement_speed = 150.93
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_dggx7")
-animation = &"WalkingUp"
+animation = &"IdleDown"
 autoplay = "IdleDown"
-frame = 4
-frame_progress = 0.402786
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_t1w4m")

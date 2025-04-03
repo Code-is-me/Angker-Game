@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://csv46bfsvllmk"]
+[gd_scene load_steps=24 format=4 uid="uid://csv46bfsvllmk"]
 
 [ext_resource type="Script" uid="uid://cfm0bxugvhrb5" path="res://Scripts/game_manager.gd" id="1_5n53g"]
 [ext_resource type="Texture2D" uid="uid://cqymhkin4ebs2" path="res://Package Creepy/Tileset_Large.png" id="2_gof10"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ceyirkvq6r4g0" path="res://Scenes/bucket.tscn" id="10_ldgsr"]
 [ext_resource type="PackedScene" uid="uid://c3xcdu6ta5bbw" path="res://Scenes/lantern.tscn" id="11_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://ctmpa7kxu5cyq" path="res://Scenes/watertap.tscn" id="12_rku1e"]
+[ext_resource type="PackedScene" uid="uid://bbh3apq7ual7e" path="res://Scenes/pickable_interactible_object.tscn" id="13_rfjv2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbnfq"]
 texture = ExtResource("2_gof10")
@@ -949,3 +950,6 @@ color = Color(0, 0, 0, 0.92549)
 
 [node name="Area2D5" parent="." instance=ExtResource("12_rku1e")]
 position = Vector2(168, 56)
+
+[node name="PickableInteractibleObject2" parent="." instance=ExtResource("13_rfjv2")]
+position = Vector2(-76, 110)
