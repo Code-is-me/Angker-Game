@@ -22,7 +22,7 @@ func setup(lvl: int, rot: float) -> void:
 @rpc("call_local")
 func clean() -> void:
 	level -= 1
-	
+
 @rpc("call_local")
 
 func setup_global_position(global_pos: Vector2) -> void:

@@ -17,7 +17,7 @@ func open_settings() -> void:
 	add_child(settings_instance)
 
 func play_as_host():
-	MultiplayerManager.become_host(%Label)
+	MultiplayerManager.create_lobby(%Label)
 	%Label.visible = true
 
 
@@ -29,4 +29,4 @@ func join_host():
 
 
 func copy_address() -> void:
-	DisplayServer.clipboard_set(Noray.oid)
+	DisplayServer.clipboard_set(MultiplayerManager.created_room_id)

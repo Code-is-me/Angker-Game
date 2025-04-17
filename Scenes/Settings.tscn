@@ -1,8 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://dplxh4chvib3x"]
+[gd_scene load_steps=7 format=3 uid="uid://dplxh4chvib3x"]
 
 [ext_resource type="Script" uid="uid://c6b78qxi7k3y4" path="res://Scripts/settings.gd" id="1_4hxq3"]
+[ext_resource type="Texture2D" uid="uid://cph6dv28sego2" path="res://kenney_onscreen-controls/Sprites/transparent-dark/transparentDark33.png" id="2_i44u3"]
+[ext_resource type="Texture2D" uid="uid://cmubh4yhmbdi0" path="res://kenney_onscreen-controls/Sprites/flat-dark/flatDark34.png" id="2_lhmql"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j2dne"]
+texture = ExtResource("2_lhmql")
+modulate_color = Color(0.990756, 0.139931, 0.317419, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lhmql"]
+texture = ExtResource("2_i44u3")
+modulate_color = Color(1, 1, 1, 0.588235)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aaqfp"]
+texture = ExtResource("2_lhmql")
 
 [node name="CanvasLayer" type="CanvasLayer"]
+layer = 128
 script = ExtResource("1_4hxq3")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
@@ -41,7 +55,11 @@ layout_mode = 2
 layout_mode = 1
 offset_right = 64.0
 offset_bottom = 64.0
-text = "X"
+theme_override_styles/hover = SubResource("StyleBoxTexture_j2dne")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lhmql")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aaqfp")
+icon_alignment = 1
+expand_icon = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/Control"]
 layout_mode = 1
@@ -81,6 +99,7 @@ offset_left = -192.0
 offset_top = -64.0
 grow_horizontal = 0
 grow_vertical = 0
+disabled = true
 text = "LOGOUT"
 
 [node name="Label" type="Label" parent="ColorRect/MarginContainer/Control"]

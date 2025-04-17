@@ -20,8 +20,8 @@ config/icon="res://icon.svg"
 MusicController="*res://Scenes/MusicController.tscn"
 SaveManager="*res://Scenes/SaveManager.tscn"
 MultiplayerManager="*res://Scenes/MultiplayerManager.tscn"
-Noray="*res://addons/netfox.noray/noray.gd"
-PacketHandshake="*res://addons/netfox.noray/packet-handshake.gd"
+DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
+HathoraSDK="*res://addons/hathora/sdk/client.gd"
 
 [display]
 
@@ -36,11 +36,12 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/netfox.internals/plugin.cfg", "res://addons/netfox.noray/plugin.cfg")
+enabled=PackedStringArray("res://addons/hathora/plugin/plugin.cfg", "res://addons/hathora/sdk/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
+"res://Angker 2D Sprites/": "yellow",
 "res://Characters/": "red",
 "res://Music/": "yellow",
 "res://Scenes/": "green",
@@ -50,6 +51,10 @@ folder_colors={
 [gui]
 
 theme/custom="res://Themes/theme.tres"
+
+[hathora]
+
+application_id="app-2b9e628f-3ca1-4ffc-a6af-06e7ce2e3cdb"
 
 [input]
 

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqudusb1btjd0"]
+
+[ext_resource type="Script" uid="uid://32tiq582ewmj" path="res://Scripts/interactible_object.gd" id="1_mw28t"]
+[ext_resource type="Texture2D" uid="uid://b8yut3yxyp51r" path="res://Angker 2D Sprites/Door.png" id="2_7mbvs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mw28t"]
+size = Vector2(8, 4)
+
+[node name="InteractibleObject" type="Area2D"]
+script = ExtResource("1_mw28t")
+metadata/_custom_type_script = "uid://32tiq582ewmj"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mw28t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7mbvs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -1,18 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://ceyirkvq6r4g0"]
 
 [ext_resource type="Script" uid="uid://cnj3xxfbhg58" path="res://Scripts/bucket.gd" id="1_b0qqc"]
-[ext_resource type="Texture2D" uid="uid://orxnpcmcnyh4" path="res://trash assets/washer.png" id="2_dco0c"]
+[ext_resource type="Texture2D" uid="uid://d3lby00mrfn0f" path="res://Angker 2D Sprites/bucketemptysprite.png" id="2_dco0c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl0yo"]
-size = Vector2(10, 13)
+size = Vector2(10, 12)
 
 [node name="Bucket" type="Area2D"]
 script = ExtResource("1_b0qqc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.415, 0.415)
+scale = Vector2(0.770417, 0.770417)
 texture = ExtResource("2_dco0c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_fl0yo")

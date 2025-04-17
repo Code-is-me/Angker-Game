@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c3xcdu6ta5bbw"]
 
 [ext_resource type="Script" uid="uid://b2no741a2h7gk" path="res://Scripts/area_2d.gd" id="1_q5ajm"]
-[ext_resource type="Texture2D" uid="uid://chsh5e4gehdrf" path="res://lantern_light.png" id="2_g4uhy"]
+[ext_resource type="Texture2D" uid="uid://chsh5e4gehdrf" path="res://Angker 2D Sprites/lantern_light.png" id="2_g4uhy"]
 [ext_resource type="Texture2D" uid="uid://c8pqg14xnqwvn" path="res://Angker 2D Sprites/lantern.png" id="2_rm8es"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e5q6r"]

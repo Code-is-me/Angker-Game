@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dnp5ybeikg1yl" path="res://Scripts/main_menu.gd" id="1_xyeo3"]
 [ext_resource type="Texture2D" uid="uid://gx47vpej5tva" path="res://MENU UTAMA.png" id="2_rb2ru"]
-[ext_resource type="Texture2D" uid="uid://fav68gq8ro8n" path="res://judul.png" id="3_npcup"]
+[ext_resource type="Texture2D" uid="uid://fav68gq8ro8n" path="res://Angker 2D Sprites/judul.png" id="3_npcup"]
 [ext_resource type="FontFile" uid="uid://yek3fu6bwv6u" path="res://Fonts/NESCyrillic.ttf" id="4_57112"]
 
 [node name="main_menu" type="MarginContainer"]
@@ -47,21 +47,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 19
 split_offset = 49
+dragging_enabled = false
 dragger_visibility = 1
 
 [node name="FreindsBg" type="ColorRect" parent="Control/VSplitContainer"]
 layout_mode = 2
+color = Color(0.301961, 0.301961, 0.301961, 1)
 
 [node name="HSplitContainer" type="HSplitContainer" parent="Control/VSplitContainer"]
 layout_mode = 2
 theme_override_constants/separation = 36
 split_offset = 393
+dragging_enabled = false
 dragger_visibility = 1
 
 [node name="VSplitContainer" type="VSplitContainer" parent="Control/VSplitContainer/HSplitContainer"]
 layout_mode = 2
 theme_override_constants/separation = 12
 split_offset = 154
+dragging_enabled = false
 dragger_visibility = 1
 
 [node name="ANGKERLabel" type="TextureRect" parent="Control/VSplitContainer/HSplitContainer/VSplitContainer"]
@@ -191,7 +195,7 @@ text = "
 "
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Control/VSplitContainer/HSplitContainer/LobbyBg"]
+[node name="CopyButton" type="Button" parent="Control/VSplitContainer/HSplitContainer/LobbyBg"]
 layout_mode = 0
 offset_left = 121.0
 offset_top = 283.0
@@ -199,7 +203,7 @@ offset_right = 235.0
 offset_bottom = 314.0
 text = "Copy-Address"
 
-[node name="Button" type="Button" parent="Control/VSplitContainer"]
+[node name="FreindsButton" type="Button" parent="Control/VSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -210,4 +214,4 @@ text = "Freinds"
 [connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/VSplitContainer/ButtonBg/MarginContainer/ButtonList/SettingsButton" to="." method="open_settings"]
 [connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/LobbyBg/HBoxContainer/buttonjoin" to="." method="join_host"]
 [connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/LobbyBg/HBoxContainer/CreateLobbyButton" to="." method="play_as_host"]
-[connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/LobbyBg/Button" to="." method="copy_address"]
+[connection signal="pressed" from="Control/VSplitContainer/HSplitContainer/LobbyBg/CopyButton" to="." method="copy_address"]

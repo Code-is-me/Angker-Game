@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cevumq0l0mhp2"]
 
-[ext_resource type="Texture2D" uid="uid://bvtjgdloo4023" path="res://jumpscare.jpg" id="1_6fj88"]
+[ext_resource type="Texture2D" uid="uid://bvtjgdloo4023" path="res://Angker 2D Sprites/jumpscare.jpg" id="1_6fj88"]
 
 [sub_resource type="Animation" id="Animation_43sn5"]
 resource_name = "jumpscare"

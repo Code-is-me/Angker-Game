@@ -1,7 +1,6 @@
 class_name InteractibleObject
 extends Area2D
 
-
 func _on_interact_with_gc(gc: GameCharacter) -> void:
 	pass
   

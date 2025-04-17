@@ -19,7 +19,7 @@ func _ready() -> void:
 		tsb.pressed.connect(func(): inventory_slot_pressed.emit(i))
 
 func display_time(time: float) -> void:
-	%TimeLabel.text = "Remaining Time " +str(floor(time/60.0)) +":"+str(snapped(fmod(time, 60.0), 0.01)).pad_zeros(2).pad_decimals(2)
+	%TimeLabel.text = "%02d:%02.2f" % [floor(time / 60.0), snapped(fmod(time, 60.0), 0.01)]
 
 func get_slot_node(idx: int) -> Control:
 	return %InventoryContainer.get_child(inventory_slot_count - idx - 1)

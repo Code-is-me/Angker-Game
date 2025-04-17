@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bd3h5h8kwh818"]
+[gd_scene load_steps=8 format=3 uid="uid://bd3h5h8kwh818"]
 
 [ext_resource type="Script" uid="uid://b7ty4tw13ywcr" path="res://Scripts/hud.gd" id="1_lkych"]
 [ext_resource type="Texture2D" uid="uid://b25cf16y23fkt" path="res://HUD.png" id="1_t675n"]
 [ext_resource type="PackedScene" uid="uid://cmttfw3gebx8w" path="res://Scenes/inventory_item.tscn" id="3_xnj0l"]
 [ext_resource type="PackedScene" uid="uid://biuf57rj7xya4" path="res://Scenes/joystick.tscn" id="4_746uu"]
+[ext_resource type="Texture2D" uid="uid://cyi4gw2gve06s" path="res://Angker 2D Sprites/Pixel Clock.png" id="4_g8s2e"]
 [ext_resource type="Texture2D" uid="uid://dvpvvn7hepjh0" path="res://kenney_onscreen-controls/Sprites/flat-dark/flatDark47.png" id="5_ahx21"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sevjf"]
@@ -123,13 +124,21 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -361.0
+offset_left = -81.0
 offset_bottom = 50.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 28
-text = "Remaining Time 0:00"
+text = " 0:00"
 label_settings = SubResource("LabelSettings_sevjf")
 horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Control/TimeLabel"]
+layout_mode = 0
+offset_left = -77.0
+offset_top = -5.0
+offset_right = -11.0
+offset_bottom = 59.0
+texture = ExtResource("4_g8s2e")
 
 [node name="Joystick" parent="Control/Control" instance=ExtResource("4_746uu")]
 layout_mode = 1
